@@ -1,28 +1,39 @@
+import { Button, Icon } from '@rneui/base';
 import { StatusBar } from 'expo-status-bar';
-import { DevoScreen } from './DevoScreen';
-const { StyleSheet, View, Text, TouchableOpacity, Button } = require("react-native");
+const { StyleSheet, View, Text, Image } = require("react-native");
 
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text>Campa</Text>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Cronograma</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}
+            <Image style={styles.logo} source={require('../assets/jdp-logo.jpeg')} />
+            <Button size="lg"
+                containerStyle={styles.containerStyle}
+                buttonStyle={styles.buttonStyle}
                 onPress={() =>
-                    navigation.navigate('DevoScreen', { name: 'Jane' })
+                    navigation.navigate('Crono')
                 }>
-                <Text style={styles.buttonText}>Devocional</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+                <Icon name="home" color="000" />
+                <Text style={styles.buttonText}>Cronograma</Text>
+            </Button>
+            <Button size="lg"
+                containerStyle={styles.containerStyle}
+                buttonStyle={styles.buttonStyle}
+                onPress={() =>
+                    navigation.navigate('Devo')
+                }>
+                <Icon name="home" color="000" />
+                <Text style={styles.buttonText}>Devocionales</Text>
+            </Button>
+            <Button size="lg"
+                containerStyle={styles.containerStyle}
+                buttonStyle={styles.buttonStyle}
+                onPress={() =>
+                    navigation.navigate('Cancionero')
+                }>
+                <Icon name="home" color="000" />
                 <Text style={styles.buttonText}>Cancionero</Text>
-            </TouchableOpacity>
+            </Button>
             <StatusBar style="auto" />
-            {/* <Button
-                title="Go to Jane's profile"
-
-            /> */}
         </View>
     );
 };
@@ -30,18 +41,29 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center',
     },
-    button: {
-        backgroundColor: '#ddd',
-        paddingVertical: 14,
-        paddingHorizontal: 18,
-        margin: 14
+    containerStyle: {
+        width: 200,
+        marginHorizontal: 50,
+        marginVertical: 10,
+        backgroundColor: 'rgba(78, 116, 289, 1)'
+    },
+    buttonStyle: {
+        backgroundColor: '#FFFAFA'
     },
     buttonText: {
-        color: 'black'
+        color: 'black',
+        fontSize: 24
+    },
+    text: {
+        color: 'white'
+    },
+    logo: {
+        width: 200,
+        height: 200
     }
 });
 

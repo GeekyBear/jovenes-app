@@ -1,9 +1,9 @@
 const { View, Text, StyleSheet } = require("react-native")
 
-const DevoScreen = ({ navigation }) => {
+const CancioneroScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Aca van los devocionales</Text>
+            <Text style={styles.text}>Aca van el cancionero</Text>
         </View>
     )
 }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
     }
 });
 
-module.exports = { DevoScreen }
+module.exports = { CancioneroScreen }
