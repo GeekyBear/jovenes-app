@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { CancioneroScreen } from './components/CancioneroScreen';
+import CancionScreen from './components/CancionScreen';
 import { CronoScreen } from './components/CronoScreen';
 import { DevoScreen } from './components/DevoScreen';
 import { HomeScreen } from './components/HomeScreen';
@@ -38,6 +39,11 @@ export default function App() {
             name="Cancionero"
             component={CancioneroScreen}
             options={{ title: 'Cancionero' }}
+          />
+          <Stack.Screen
+            name="Cancion"
+            component={CancionScreen}
+            options={{ title: 'Cancion' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
